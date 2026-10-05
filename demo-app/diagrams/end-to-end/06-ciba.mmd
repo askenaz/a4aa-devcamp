@@ -1,0 +1,45 @@
+---
+title: "CIBA · aprobación para compartir documentos"
+---
+sequenceDiagram
+    autonumber
+    participant User as Usuario
+    participant NexusFrontend as Nexus frontend / Vite (:5173)
+    participant NexusApi as Nexus API server (:3000)
+    participant Auth0 as Auth0 (HTTPS :443)
+    participant Guardian as Auth0 Guardian (dispositivo del usuario)
+    participant NexusMcp as Nexus MCP server (:3001)
+    participant Fga as FGA: server/fga/client.js (sin puerto propio)
+    User->>NexusFrontend: Compartir documento con un destinatario
+    NexusFrontend->>NexusApi: POST /api/chat con token A
+    NexusApi->>NexusApi: share_document requiere consentimiento
+    NexusApi->>Auth0: POST /bc-authorize con login_hint y binding_message
+    Auth0-->>NexusApi: auth_req_id, expires_in e interval
+    Auth0->>Guardian: Solicitud de aprobación al usuario
+    NexusApi-->>NexusFrontend: pendingCIBA
+    par Consulta periódica del estado
+        loop Mientras está pendiente
+            NexusFrontend->>NexusApi: GET /api/ciba/status/authReqId
+            NexusApi->>Auth0: /oauth/token con grant CIBA y auth_req_id
+            Auth0-->>NexusApi: Pending, aprobación o denegación
+            NexusApi-->>NexusFrontend: Estado
+        end
+    and Aprobación fuera de banda
+        User->>Guardian: Aprobar o rechazar
+        Guardian->>Auth0: Comunicar decisión del usuario
+    end
+    alt Aprobado en una consulta posterior
+        NexusApi->>NexusApi: Registrar consentimiento por usuario y herramienta
+        NexusFrontend->>NexusApi: Reenviar el mensaje original
+        NexusApi->>Auth0: OBO habitual para obtener B
+        Auth0-->>NexusApi: Token B
+        NexusApi->>NexusMcp: share_document con Bearer B
+        NexusMcp->>NexusMcp: Validar JWT y scope mcp:docs:share
+        NexusMcp->>Fga: Check can_share del usuario para el documento
+        Fga-->>NexusMcp: Allow o deny
+        NexusMcp-->>NexusApi: Resultado simulado de compartir o denegación
+        NexusApi->>NexusApi: Revocar consentimiento tras resultado normal
+        NexusApi-->>NexusFrontend: Resultado
+    else Denegado o expirado
+        NexusApi-->>NexusFrontend: Detener operación
+    end

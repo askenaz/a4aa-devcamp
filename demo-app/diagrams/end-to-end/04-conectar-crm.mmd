@@ -1,0 +1,23 @@
+---
+title: "Connected Accounts · conectar CRM"
+---
+sequenceDiagram
+    autonumber
+    participant User as Usuario
+    participant NexusFrontend as Nexus frontend / Vite (:5173)
+    participant Auth0 as Auth0 (HTTPS :443)
+    participant NexusCrm as Nexus CRM (:3002)
+    User->>NexusFrontend: Connect CRM
+    NexusFrontend->>Auth0: Connected Accounts para la conexión CRM
+    Auth0-->>NexusFrontend: Redirección al authorizationURL configurado
+    NexusFrontend->>NexusCrm: GET /crm/oauth/authorize
+    NexusCrm->>NexusCrm: Autoaprobar y generar código en el mock
+    NexusCrm-->>NexusFrontend: Redirect a callback de Auth0 con code y state
+    NexusFrontend->>Auth0: Seguir callback
+    Auth0->>NexusCrm: POST /crm/oauth/token con authorization_code
+    NexusCrm-->>Auth0: Access token y refresh token si offline_access
+    Auth0-->>NexusFrontend: Retorno al redirect de la SPA con connect_code
+    NexusFrontend->>Auth0: SDK completa Connected Accounts mediante My Account API
+    Auth0->>Auth0: Persistir credenciales y asociación con el usuario
+    Auth0-->>NexusFrontend: Cuenta conectada
+    NexusFrontend->>NexusFrontend: Marcar consulta de estado del Vault

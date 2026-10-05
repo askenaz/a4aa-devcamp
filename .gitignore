@@ -1,6 +1,7 @@
 node_modules
 .env
 .env.*
+!demo-app/.env.demo
 !.env.example
 .vercel
 .port

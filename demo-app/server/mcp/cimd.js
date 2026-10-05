@@ -34,7 +34,8 @@ export function getClientMetadata(req) {
   // reverse proxy; fall back to the direct host for local runs.
   const proto = req.headers["x-forwarded-proto"] || req.protocol;
   const host  = req.headers["x-forwarded-host"]  || req.headers.host;
-  const clientId = `${proto}://${host}/.well-known/client-metadata`;
+  const publicMcpOrigin = (process.env.MCP_PUBLIC_URL || `${proto}://${host}`).replace(/\/+$/, "");
+  const clientId = `${publicMcpOrigin}/.well-known/client-metadata`;
 
   // Derive the frontend redirect URI from the MCP server host by
   // swapping port 3001 → 5173 (Codespace) or 3001 → 3000 (local built).
@@ -44,9 +45,9 @@ export function getClientMetadata(req) {
 
   return {
     client_id:   clientId,
-    client_name: "Nexus Agent (DevCamp)",
+    client_name: "Nexus Agent (DevCamp) Local",
     grant_types: ["authorization_code"],
-    redirect_uris: [frontendOrigin, `${frontendOrigin}/`],
+    redirect_uris: [frontendOrigin, `${frontendOrigin}/`, "http://localhost:5173", "http://localhost:5173/"],
     token_endpoint_auth_method: "none",
     scope: "mcp:docs:search mcp:docs:read mcp:crm:log mcp:docs:share",
   };

@@ -1,5 +1,7 @@
 # Nexus (A4AA): demo-app
 
+Guía en español: [autenticación y autorización de extremo a extremo](How-To-E2E.md), con arquitectura, secuencias, OBO, CIBA, CRM y permisos de usuario y agente.
+
 This is the Nexus devcamp lab's application code. Each participant runs their own copy in GitHub Codespaces against their own Auth0 tenant, provisioned with one click from inside the app. This is the only living copy of the app: there is no separate starter/solution tree, so participants read [`../lab-guide/`](../lab-guide/) and inspect this codebase directly. (Running locally instead of Codespaces is possible but not recommended; see "Running locally" below.)
 
 The business case is straightforward: a participant opens a Codespace, clicks one button, and has a fully-configured Nexus environment in minutes rather than an afternoon of manual Dashboard setup.
@@ -19,7 +21,9 @@ An earlier local-dev iteration of this workshop (separate `starter/`/`solution/`
 
 ## Architecture
 
-![Nexus system architecture: the whole app, including the API, MCP server, and CRM mock, runs inside one GitHub Codespace or locally, with only Auth0, FGA, and the LLM external](images/architecture.png)
+[![Nexus: componentes, puertos y flujos de autenticación y autorización](diagrams/end-to-end/01-arquitectura.svg)](diagrams/end-to-end/01-arquitectura.svg)
+
+[Todos los diagramas y formatos](diagrams/end-to-end/README.md) · [Draw.io editable](diagrams/end-to-end/01-arquitectura.drawio) · [PNG](diagrams/end-to-end/01-arquitectura.png) · [PDF](diagrams/end-to-end/01-arquitectura.pdf)
 
 ### Provisioning and runtime config
 
@@ -35,7 +39,7 @@ Express  ── Tenant (local-fallback path) ──► reads AUTH0_* from .env
 /api/config → { domain, clientId, audience }  ► SPA initializes Auth0
 ```
 
-The SPA fetches `/api/config` on mount (`src/config/runtimeConfig.jsx`) and gates render until it returns, so the same build initializes Auth0 correctly against whichever tenant this instance is pointed at. Provisioning Auth0 resources (Module 01's **Provision Resources** button) calls `server/platform/provision.js`, which creates the resource servers, M2M client, CIBA client, CRM connection, and, when credentials are supplied, the FGA store, directly against the tenant named in `.env`.
+The SPA fetches `/api/config` on mount (`src/config/runtimeConfig.jsx`) and gates render until it returns, so the same build initializes Auth0 correctly against whichever tenant this instance is pointed at. Provisioning Auth0 resources (Module 01's **Provision Resources** button) calls `server/platform/provision.js`, which creates the resource servers, SPA application, CIBA client, CRM connection, and, when credentials are supplied, the FGA store, directly against the tenant named in `.env`.
 
 **What provisioning creates:**
 
@@ -183,13 +187,13 @@ Module numbering note: `ModuleChecks`/`ProgressTracker` use an internal 0-indexe
 One participant runs one Codespace against one Auth0 tenant. This is the only supported path: Codespaces gives every process a real, publicly reachable HTTPS URL, which several modules depend on (see "Running locally" below for why that matters).
 
 ```bash
-touch .env
+cp .env.demo .env
 # add AUTH0_DOMAIN, AUTH0_MGMT_CLIENT_ID, AUTH0_MGMT_CLIENT_SECRET
 npm install
 npm run dev
 ```
 
-There's no `.env.sample` to copy; create the file yourself. If you start the app before adding these three values, the setup screen tells you exactly which ones are missing.
+Copy the committed `.env.demo` template to `.env` and fill in the three Auth0 Management values. If you start the app before adding these three values, the setup screen tells you exactly which ones are missing.
 
 `npm run dev` boots Vite (frontend) plus the Express API on :3000, the MCP server on :3001, and the CRM mock on :3002. Without an `OPENAI_API_KEY` the agent uses the deterministic pattern-matching simulator. See [`../lab-guide/01-prerequisites.md`](../lab-guide/01-prerequisites.md) for the full participant-facing walkthrough, including where the initial `.env` values come from and the in-app **Provision Resources** step.
 
@@ -205,7 +209,7 @@ Use this for quick edit-and-reload iteration on code that doesn't touch Token Va
 
 ### Environment variables
 
-Only `AUTH0_DOMAIN`, `AUTH0_MGMT_CLIENT_ID`, and `AUTH0_MGMT_CLIENT_SECRET` need to be set by hand; everything else below gets written to `.env` automatically by the in-app **Provision Resources** step. The full set:
+Start by filling in `AUTH0_DOMAIN`, `AUTH0_MGMT_CLIENT_ID`, and `AUTH0_MGMT_CLIENT_SECRET`. **Provision Resources** writes the resources it creates to `.env`; the OBO client, CIMD import, Token Vault setting, and optional services still require the manual steps described in the lab. The full set:
 
 | Group | Vars |
 |---|---|
@@ -216,7 +220,7 @@ Only `AUTH0_DOMAIN`, `AUTH0_MGMT_CLIENT_ID`, and `AUTH0_MGMT_CLIENT_SECRET` need
 | CRM connection (Module 04) | `CRM_CLIENT_ID`, `CRM_CLIENT_SECRET` |
 | LLM | `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `LLM_MODEL` |
 
-`.env*` is entirely gitignored; there is no sample file committed to the repo. Create `.env` yourself (see "Running" above).
+Real `.env` files are gitignored. The committed `.env.demo` contains only blank or commented example values; copy it to `.env` before starting the app.
 
 ## What's live vs. simulated
 

@@ -1,0 +1,42 @@
+---
+title: "Nexus · arquitectura de ejecución"
+---
+flowchart LR
+    subgraph userSpace ["Usuario y dispositivos"]
+        frontend["Nexus frontend / Vite (:5173)"]
+        guardian["Auth0 Guardian: aprobación CIBA / MFA"]
+    end
+    subgraph localProcess ["Entorno local · un proceso Node: server/index.js"]
+        api["Nexus API server (:3000): agente, OBO, CIBA, provisionamiento"]
+        mcp["Nexus MCP server (:3001): valida JWT B + scope de la herramienta"]
+        crm["Nexus CRM (:3002): mock OAuth + API, valida token C"]
+        fga["FGA local: server/fga/client.js, checks y tuplas"]
+        model["Reglas FGA: server/fga/model.js"]
+        documents["DOCUMENTS: server/fga/model.js, memoria"]
+        simulator["Simulador del agente: alternativa a OpenAI"]
+    end
+    subgraph external ["Servicios externos"]
+        auth0["Auth0 (HTTPS :443): OIDC, OBO, CIBA, Connected Accounts, Token Vault"]
+        openai["OpenAI API (HTTPS :443) o endpoint OPENAI_BASE_URL"]
+        remoteFga["Okta FGA / OpenFGA: store remoto opcional"]
+    end
+    frontend -->|"/api/chat · token A"| api
+    frontend -->|"Login OIDC / PKCE + Connected Accounts"| auth0
+    api -->|"OBO: token A → B / CIBA"| auth0
+    api -->|"/mcp/tools/call · token B + A para el Vault"| mcp
+    api -->|"Mensajes y resultados, sin tokens en el prompt"| openai
+    api -.->|"Alternativa local"| simulator
+    mcp -->|"Token Vault: A → C"| auth0
+    mcp -->|"/crm/activities · token C"| crm
+    mcp -->|"can_read / can_share por usuario y documento"| fga
+    model -.->|"Define relaciones y reglas"| fga
+    mcp -->|"Acceso después de autorización"| documents
+    fga -.->|"Solo con configuración completa"| remoteFga
+    auth0 -->|"CIBA / MFA"| guardian
+    guardian -->|"Decisión del usuario"| auth0
+    classDef local fill:#F1F6FA,stroke:#ACC1D3,color:#142B43
+    classDef identity fill:#F5F1FC,stroke:#AC9ACA,color:#403668
+    classDef resource fill:#EDF8F6,stroke:#81B6B5,color:#005E63
+    class frontend,api,openai,simulator local
+    class auth0,guardian identity
+    class mcp,crm,fga,model,documents,remoteFga resource

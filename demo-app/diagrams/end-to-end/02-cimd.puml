@@ -1,0 +1,31 @@
+@startuml
+!pragma teoz true
+hide footbox
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam sequence {
+  ArrowColor #2563A6
+  LifeLineBorderColor #ABBCCE
+  ParticipantBorderColor #B5C8DA
+  ParticipantBackgroundColor #F1F6FA
+  ParticipantFontColor #142B43
+  GroupBorderColor #8A9BAE
+  GroupBackgroundColor #F6F8FB
+}
+title Registro y verificación CIMD
+autonumber
+participant "Administrador" as Admin
+participant "Auth0 (HTTPS :443)" as Auth0
+participant "Nexus MCP server (:3001)" as NexusMcp
+participant "Nexus API server (:3000)" as NexusApi
+Admin->Auth0: Importar URL HTTPS del documento CIMD
+Auth0->NexusMcp: GET /.well-known/client-metadata
+NexusMcp-->Auth0: client_id URL, nombre, redirects y grants
+Auth0-->Admin: Registro del cliente CIMD
+Admin->NexusApi: Ejecutar verificación del módulo
+NexusApi->Auth0: Consultar clients por external_client_id público
+Auth0-->NexusApi: Registro encontrado o lista vacía
+NexusApi-->Admin: Resultado de verificación
+@enduml

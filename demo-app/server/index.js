@@ -280,7 +280,8 @@ app.get("/api/verify/module01", async (req, res) => {
   const publicMcpHost = reqHost.includes(".app.github.dev")
     ? reqHost.replace(/-\d+(\.app\.github\.dev)$/, `-${mcpPortStr}$1`)
     : reqHost.replace(/:\d+$/, `:${mcpPortStr}`);
-  const publicCimdUrl = `${reqProto}://${publicMcpHost}/.well-known/client-metadata`;
+  const publicMcpOrigin = (process.env.MCP_PUBLIC_URL || `${reqProto}://${publicMcpHost}`).replace(/\/+$/, "");
+  const publicCimdUrl = `${publicMcpOrigin}/.well-known/client-metadata`;
 
   // 1. CIMD metadata document (verify endpoint is responding locally)
   let cimdUrl = publicCimdUrl;

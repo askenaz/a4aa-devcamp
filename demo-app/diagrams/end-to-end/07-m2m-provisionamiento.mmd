@@ -1,0 +1,26 @@
+---
+title: "M2M · provisionamiento desde Nexus API server (:3000)"
+---
+sequenceDiagram
+    autonumber
+    participant Admin as Administrador
+    participant NexusFrontend as Nexus frontend / Vite (:5173)
+    participant NexusApi as Nexus API server (:3000)
+    participant Auth0 as Auth0 (HTTPS :443)
+    participant Auth0ManagementApi as Auth0 Management API (HTTPS :443)
+    Admin->>NexusFrontend: Pulsar Provision Resources
+    NexusFrontend->>NexusApi: POST /api/setup/provision mediante proxy de Vite
+    NexusApi->>Auth0: POST /oauth/token con client_credentials y audience /api/v2/
+    Auth0-->>NexusApi: Access token de la aplicación administradora
+    loop Cada operación de runProvision
+        NexusApi->>Auth0ManagementApi: Registrar APIs, aplicaciones, conexión, usuarios, rol y MFA
+        Auth0ManagementApi->>Auth0ManagementApi: Comprobar token y permisos administrativos
+        Auth0ManagementApi-->>NexusApi: Recurso creado o error de la operación
+    end
+    NexusApi->>NexusApi: Guardar resultados en .env y process.env
+    NexusApi-->>NexusFrontend: Resultado con keys y missingKeys
+    NexusFrontend->>NexusApi: GET /api/setup/status
+    NexusApi-->>NexusFrontend: Estado del provisionamiento
+    NexusFrontend->>NexusApi: GET /api/config para inicializar el login
+    NexusApi-->>NexusFrontend: domain, clientId, audience y crmConnection
+    NexusFrontend-->>Admin: Resultado de la configuración

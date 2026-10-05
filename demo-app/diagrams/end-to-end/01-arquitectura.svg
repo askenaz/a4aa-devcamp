@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1320" viewBox="0 0 1920 1320" role="img" aria-labelledby="title desc">
+<title id="title">Arquitectura de ejecución</title><desc id="desc">Componentes reales · puertos habituales · identidad del usuario y controles por recurso</desc>
+<defs>
+<marker id="arrow142B43" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#142B43"/></marker>
+<marker id="arrow4B6178" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4B6178"/></marker>
+<marker id="arrow007C83" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007C83"/></marker>
+<marker id="arrow6850AD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6850AD"/></marker>
+<marker id="arrow2563A6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563A6"/></marker>
+<marker id="arrowAD6100" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#AD6100"/></marker>
+</defs>
+<rect x="0" y="0" width="1920" height="1320" rx="0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
+<rect x="0" y="0" width="1920" height="145" rx="0" fill="#142B43" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#87D6D3"><tspan x="48" y="41.0">NEXUS  /  AUTH0 FOR AI AGENTS</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#FFFFFF"><tspan x="48" y="91.0">Arquitectura de ejecución</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#D5E4F1"><tspan x="48" y="123.0">Componentes reales · puertos habituales · identidad del usuario y controles por recurso</tspan></text>
+<rect x="400" y="184" width="1430" height="218" rx="12" fill="#F5F1FC" stroke="#D9CDED" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#6850AD"><tspan x="424" y="215.0">SERVICIO EXTERNO  /  AUTH0</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6850AD"><tspan x="1490" y="215.0">AUTH0_DOMAIN · HTTPS :443</tspan></text>
+<rect x="400" y="530" width="1430" height="490" rx="12" fill="#F3F7FA" stroke="#D4E0EA" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#2563A6"><tspan x="424" y="565.0">NEXUS / LOCAL</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#4B6178"><tspan x="424" y="589.0">Un proceso Node</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#4B6178"><tspan x="1445" y="563.0">UN PROCESO · TRES LISTENERS</tspan><tspan x="1445" y="584.0">:3000 · :3001 · :3002</tspan><tspan x="1445" y="605.0">FGA, CIBA y Vault: módulos sin puerto</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#4B6178"><tspan x="424" y="615.0">server/index.js</tspan></text>
+<rect x="48" y="580" width="284" height="247" rx="12" fill="#F3F7FA" stroke="#D4E0EA" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="70" y="614.0">NAVEGADOR / VITE</tspan></text>
+<path d="M 290 640 L 290 444 L 560 444 L 560 369" fill="none" stroke="#6850AD" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow6850AD)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#6850AD"><tspan x="208" y="434.0">Login OIDC / PKCE + Connected Accounts</tspan></text>
+<path d="M 612 640 L 612 470 L 1000 470 L 1000 369" fill="none" stroke="#6850AD" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow6850AD)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#6850AD"><tspan x="635" y="457.0">OBO: A → B · aprobación CIBA</tspan></text>
+<path d="M 1132 640 L 1132 493 L 1500 493 L 1500 369" fill="none" stroke="#6850AD" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow6850AD)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#6850AD"><tspan x="1190" y="479.0">Token Vault: A → C</tspan></text>
+<path d="M 308 727 L 450 727" fill="none" stroke="#007C83" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow007C83)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#007C83"><tspan x="330" y="698.0">Token A</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#4B6178"><tspan x="330" y="761.0">/api/chat</tspan></text>
+<path d="M 775 727 L 970 727" fill="none" stroke="#007C83" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow007C83)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#007C83"><tspan x="824" y="697.0">Token B</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#4B6178"><tspan x="789" y="762.0">/mcp/tools/call</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#4B6178"><tspan x="794" y="788.0">+ A para el Vault</tspan></text>
+<path d="M 1295 727 L 1490 727" fill="none" stroke="#007C83" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow007C83)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#007C83"><tspan x="1351" y="697.0">Token C</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#4B6178"><tspan x="1310" y="762.0">/crm/activities</tspan></text>
+<path d="M 1080 810 L 1080 865" fill="none" stroke="#007C83" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow007C83)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#007C83"><tspan x="1100" y="842.0">Check por documento</tspan></text>
+<path d="M 1295 795 L 1378 795 L 1378 844 L 1610 844 L 1610 865" fill="none" stroke="#007C83" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow007C83)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#007C83"><tspan x="1460" y="831.0">Acceso autorizado</tspan></text>
+<path d="M 612 810 L 612 1080" fill="none" stroke="#2563A6" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow2563A6)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#2563A6"><tspan x="635" y="919.0">Mensajes y resultados</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#2563A6"><tspan x="635" y="942.0">de herramientas</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#4B6178"><tspan x="635" y="968.0">Sin tokens en el prompt</tspan></text>
+<path d="M 1080 970 L 1080 1080" fill="none" stroke="#4B6178" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#arrow4B6178)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#4B6178"><tspan x="1100" y="1054.0">Solo si está configurado</tspan></text>
+<path d="M 320 309 L 400 309" fill="none" stroke="#6850AD" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow6850AD)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6850AD"><tspan x="330" y="284.0">CIBA</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#6850AD"><tspan x="330" y="303.0">MFA</tspan></text>
+<rect x="430" y="248" width="300" height="121" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="430" y="264" width="4" height="89" rx="2" fill="#6850AD" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="450" y="290.0">Login y cuentas</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="450" y="322.0">OIDC · OAuth 2.0</tspan><tspan x="450" y="344.4">Connected Accounts</tspan></text>
+<rect x="810" y="248" width="390" height="121" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="810" y="264" width="4" height="89" rx="2" fill="#6850AD" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="830" y="290.0">Delegación y aprobación</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="830" y="322.0">Token Exchange / OBO</tspan><tspan x="830" y="344.4">CIBA → Auth0 Guardian</tspan></text>
+<rect x="1280" y="248" width="520" height="121" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="1280" y="264" width="4" height="89" rx="2" fill="#6850AD" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="1300" y="290.0">Token Vault</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="1300" y="322.0">Credenciales del CRM conectado al usuario</tspan><tspan x="1300" y="344.4">Recuperación mediante exchange con token A</tspan></text>
+<rect x="60" y="242" width="260" height="133" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="60" y="258" width="4" height="101" rx="2" fill="#6850AD" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="80" y="284.0">Auth0 Guardian</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="80" y="316.0">Dispositivo del usuario</tspan><tspan x="80" y="338.4">Aprueba o rechaza CIBA</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="70" y="209.0">USUARIO / DISPOSITIVOS</tspan></text>
+<rect x="70" y="640" width="238" height="170" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="70" y="656" width="4" height="138" rx="2" fill="#2563A6" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="90" y="682.0">Nexus frontend</tspan></text>
+<rect x="90" y="694" width="75" height="28" rx="7" fill="#E8F5F4" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="100" y="712.0">:5173</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#4B6178"><tspan x="180" y="711.0">Vite</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="90" y="750.0">React · sesión Auth0</tspan><tspan x="90" y="772.4">Chat y configuración</tspan></text>
+<rect x="450" y="640" width="325" height="170" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="450" y="656" width="4" height="138" rx="2" fill="#2563A6" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="470" y="682.0">Nexus API server</tspan></text>
+<rect x="470" y="694" width="75" height="28" rx="7" fill="#E8F5F4" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="480" y="712.0">:3000</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#4B6178"><tspan x="560" y="711.0">Express</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="470" y="750.0">Valida A · ejecuta el agente</tspan><tspan x="470" y="772.4">OBO, CIBA y provisionamiento</tspan></text>
+<rect x="970" y="640" width="325" height="170" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="970" y="656" width="4" height="138" rx="2" fill="#007C83" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="990" y="682.0">Nexus MCP server</tspan></text>
+<rect x="990" y="694" width="75" height="28" rx="7" fill="#E8F5F4" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#007C83"><tspan x="1000" y="712.0">:3001</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#4B6178"><tspan x="1080" y="711.0">Express</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="990" y="750.0">Valida B + scope de la tool</tspan><tspan x="990" y="772.4">FGA para documentos</tspan></text>
+<rect x="1490" y="640" width="285" height="170" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="1490" y="656" width="4" height="138" rx="2" fill="#007C83" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="1510" y="682.0">Nexus CRM</tspan></text>
+<rect x="1510" y="694" width="75" height="28" rx="7" fill="#E8F5F4" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#007C83"><tspan x="1520" y="712.0">:3002</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#4B6178"><tspan x="1600" y="711.0">Express</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="1510" y="750.0">Mock OAuth + API</tspan><tspan x="1510" y="772.4">Valida el token C del CRM</tspan></text>
+<rect x="970" y="865" width="325" height="105" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="970" y="881" width="4" height="73" rx="2" fill="#007C83" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="990" y="907.0">FGA · módulo local</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="990" y="939.0">client.js: checks y tuplas</tspan><tspan x="990" y="961.4">model.js: reglas de autorización</tspan></text>
+<rect x="1445" y="865" width="330" height="105" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="1445" y="881" width="4" height="73" rx="2" fill="#007C83" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="1465" y="907.0">Documentos · memoria</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="1465" y="939.0">DOCUMENTS · server/fga/model.js</tspan><tspan x="1465" y="961.4">Contenido de la demo</tspan></text>
+<rect x="450" y="1080" width="325" height="112" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="450" y="1096" width="4" height="80" rx="2" fill="#2563A6" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="470" y="1122.0">OpenAI API · HTTPS :443</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="470" y="1154.0">Proveedor externo configurable</tspan><tspan x="470" y="1176.4">Alternativa: simulador local</tspan></text>
+<rect x="970" y="1080" width="325" height="112" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="970" y="1096" width="4" height="80" rx="2" fill="#4B6178" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="990" y="1122.0">Okta FGA / OpenFGA</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="990" y="1154.0">Store remoto opcional</tspan><tspan x="990" y="1176.4">Sin FGA_*: simulación en memoria</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="70" y="893.0">RESPONSABILIDAD</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="70" y="926.0">El modelo propone herramientas.</tspan><tspan x="70" y="948.4">Los servicios validan tokens,</tspan><tspan x="70" y="970.8">scopes y permisos por objeto.</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="70" y="1020.0">CIBA se exige en :3000 antes</tspan><tspan x="70" y="1042.4">de llamar a share_document.</tspan><tspan x="70" y="1064.8">Compartir es simulado.</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="1445" y="1074.0">LECTURA DEL DIAGRAMA</tspan></text>
+<path d="M 1445 1105 L 1500 1105" fill="none" stroke="#007C83" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow007C83)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#4B6178"><tspan x="1515" y="1108.0">Llamada a recurso / validación</tspan></text>
+<path d="M 1445 1140 L 1500 1140" fill="none" stroke="#6850AD" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow6850AD)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#4B6178"><tspan x="1515" y="1143.0">Autenticación y credenciales</tspan></text>
+<path d="M 1445 1175 L 1500 1175" fill="none" stroke="#4B6178" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#arrow4B6178)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#4B6178"><tspan x="1515" y="1178.0">Integración opcional</tspan></text>
+<rect x="48" y="1230" width="1824" height="56" rx="10" fill="#EEF3F7" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#4B6178"><tspan x="68" y="1263.0">Vista de ejecución · las flechas indican la solicitud, las respuestas se omiten. Provisionamiento y ngrok: ver diagrama 09.</tspan></text>
+</svg>

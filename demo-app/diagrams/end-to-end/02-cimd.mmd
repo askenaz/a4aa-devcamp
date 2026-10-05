@@ -1,0 +1,17 @@
+---
+title: "Registro y verificación CIMD"
+---
+sequenceDiagram
+    autonumber
+    participant Admin as Administrador
+    participant Auth0 as Auth0 (HTTPS :443)
+    participant NexusMcp as Nexus MCP server (:3001)
+    Admin->>Auth0: Importar URL HTTPS del documento CIMD
+    Auth0->>NexusMcp: GET /.well-known/client-metadata
+    NexusMcp-->>Auth0: client_id URL, nombre, redirects y grants
+    Auth0-->>Admin: Registro del cliente CIMD
+    participant NexusApi as Nexus API server (:3000)
+    Admin->>NexusApi: Ejecutar verificación del módulo
+    NexusApi->>Auth0: Consultar clients por external_client_id público
+    Auth0-->>NexusApi: Registro encontrado o lista vacía
+    NexusApi-->>Admin: Resultado de verificación

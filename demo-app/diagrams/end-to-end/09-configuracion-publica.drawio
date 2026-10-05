@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="nexus" name="Configuración y exposición pública">
+    <mxGraphModel dx="1920" dy="1040" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1040" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1920" height="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;arcSize=8;whiteSpace=wrap;html=0;fillColor=#142B43;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1920" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="NEXUS  /  AUTH0 FOR AI AGENTS" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#87D6D3;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="48" y="27" width="267.84000000000003" height="22.599999999999998" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Configuración y exposición pública" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=36;fontColor=#FFFFFF;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="48" y="55" width="791.36" height="53.4" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Registro automático desde :3000 · importación CIMD · URLs públicas para el CRM local" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=17;fontColor=#D5E4F1;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="48" y="106" width="921.9200000000001" height="26.799999999999997" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#F3F7FA;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="48" y="180" width="1824" height="333" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="01  /  PROVISIONAMIENTO BAJO DEMANDA" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=17;fontColor=#2563A6;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="201" width="399.68" height="26.799999999999997" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Se inicia al pulsar “Provision Resources”. Levantar el servidor no registra los recursos por sí solo." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=18;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="236" width="1171.52" height="28.2" as="geometry" />
+        </mxCell>
+        <mxCell id="10" style="edgeStyle=none;rounded=0;html=0;strokeColor=#2563A6;strokeWidth=2.5;endArrow=block;endFill=1;dashed=0;exitX=1;exitY=0.450331;exitPerimeter=0;entryX=0;entryY=0.450331;entryPerimeter=0;" edge="1" parent="1" source="16" target="22">
+          <mxGeometry relative="1" as="geometry">
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="POST" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#2563A6;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="394" y="318" width="80" height="22.599999999999998" as="geometry" />
+        </mxCell>
+        <mxCell id="12" style="edgeStyle=none;rounded=0;html=0;strokeColor=#6850AD;strokeWidth=2.5;endArrow=block;endFill=1;dashed=0;exitX=1;exitY=0.450331;exitPerimeter=0;entryX=0;entryY=0.450331;entryPerimeter=0;" edge="1" parent="1" source="22" target="28">
+          <mxGeometry relative="1" as="geometry">
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="M2M" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=15;fontColor=#6850AD;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="905" y="316" width="80" height="24.0" as="geometry" />
+        </mxCell>
+        <mxCell id="14" style="edgeStyle=none;rounded=0;html=0;strokeColor=#2563A6;strokeWidth=2.5;endArrow=block;endFill=1;dashed=0;exitX=0.763158;exitY=0;exitPerimeter=0;entryX=0.492537;entryY=0;entryPerimeter=0;" edge="1" parent="1" source="22" target="34">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="270" />
+              <mxPoint x="1675" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="Persiste resultados" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=15;fontColor=#2563A6;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="240" width="190.4" height="24.0" as="geometry" />
+        </mxCell>
+        <mxCell id="component-16" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="72.0" y="286.0" width="310.0" height="151.0" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-16">
+          <mxGeometry x="0.0" y="0.0" width="310" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#2563A6;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-16">
+          <mxGeometry x="0.0" y="16.0" width="4" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Nexus frontend" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-16">
+          <mxGeometry x="20.0" y="20.0" width="276" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E8F5F4;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-16">
+          <mxGeometry x="20.0" y="54.0" width="75" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value=":5173" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#2563A6;fontStyle=1;spacing=0;" vertex="1" parent="component-16">
+          <mxGeometry x="30.0" y="58.0" width="61" height="22.599999999999998" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Botón Provision Resources&#10;Proxy de Vite a /api" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-16">
+          <mxGeometry x="20.0" y="94.0" width="274" height="47.8" as="geometry" />
+        </mxCell>
+        <mxCell id="component-22" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="510.0" y="286.0" width="380.0" height="151.0" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-22">
+          <mxGeometry x="0.0" y="0.0" width="380" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#2563A6;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-22">
+          <mxGeometry x="0.0" y="16.0" width="4" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="Nexus API server" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-22">
+          <mxGeometry x="20.0" y="20.0" width="346" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E8F5F4;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-22">
+          <mxGeometry x="20.0" y="54.0" width="75" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value=":3000" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#2563A6;fontStyle=1;spacing=0;" vertex="1" parent="component-22">
+          <mxGeometry x="30.0" y="58.0" width="61" height="22.599999999999998" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="POST /api/setup/provision&#10;runProvision() + AUTH0_MGMT_*" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-22">
+          <mxGeometry x="20.0" y="94.0" width="344" height="47.8" as="geometry" />
+        </mxCell>
+        <mxCell id="component-28" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1045.0" y="286.0" width="380.0" height="151.0" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-28">
+          <mxGeometry x="0.0" y="0.0" width="380" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#6850AD;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-28">
+          <mxGeometry x="0.0" y="16.0" width="4" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="Auth0 Management API" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-28">
+          <mxGeometry x="20.0" y="20.0" width="346" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#E8F5F4;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-28">
+          <mxGeometry x="20.0" y="54.0" width="75" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value=":443" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#6850AD;fontStyle=1;spacing=0;" vertex="1" parent="component-28">
+          <mxGeometry x="30.0" y="58.0" width="61" height="22.599999999999998" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="Token M2M · audiencia /api/v2/&#10;APIs, apps, CRM, usuarios, rol y MFA" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-28">
+          <mxGeometry x="20.0" y="94.0" width="344" height="47.8" as="geometry" />
+        </mxCell>
+        <mxCell id="component-34" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1510.0" y="286.0" width="335.0" height="151.0" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-34">
+          <mxGeometry x="0.0" y="0.0" width="335" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#2563A6;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-34">
+          <mxGeometry x="0.0" y="16.0" width="4" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="Configuración local" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-34">
+          <mxGeometry x="20.0" y="20.0" width="301" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="Resultados → .env / process.env&#10;La SPA recarga /api/config" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-34">
+          <mxGeometry x="20.0" y="58.0" width="299" height="47.8" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="Manual: cliente inicial de Management, cliente OBO, importación CIMD y habilitación de Token Vault. FGA remoto: opcional." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=17;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="467" width="1324.48" height="26.799999999999997" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FBF8F2;strokeColor=#E5DAC6;strokeWidth=1.5;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="48" y="544" width="1824" height="368" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="02  /  HTTPS PÚBLICO HACIA LOS SERVICIOS LOCALES" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=17;fontColor=#AD6100;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="565" width="530.24" height="26.799999999999997" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="Auth0 debe alcanzar los endpoints públicos. El túnel hacia :3001 y el túnel hacia :3002 cumplen funciones distintas." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=18;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="597" width="1344.32" height="28.2" as="geometry" />
+        </mxCell>
+        <mxCell id="42" style="edgeStyle=none;rounded=0;html=0;strokeColor=#6850AD;strokeWidth=2.5;endArrow=block;endFill=1;dashed=0;exitX=1;exitY=0.510638;exitPerimeter=0;entryX=0;entryY=0.510638;entryPerimeter=0;" edge="1" parent="1" source="50" target="54">
+          <mxGeometry relative="1" as="geometry">
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="43" value="Importar metadata" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#6850AD;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="474" y="661" width="182.08" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="44" style="edgeStyle=none;rounded=0;html=0;strokeColor=#AD6100;strokeWidth=2.5;endArrow=block;endFill=1;dashed=0;exitX=1;exitY=0.510638;exitPerimeter=0;entryX=0;entryY=0.510638;entryPerimeter=0;" edge="1" parent="1" source="54" target="58">
+          <mxGeometry relative="1" as="geometry">
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="45" value="GET client-metadata" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#AD6100;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1123" y="661" width="202.56" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="46" style="edgeStyle=none;rounded=0;html=0;strokeColor=#6850AD;strokeWidth=2.5;endArrow=block;endFill=1;dashed=0;exitX=1;exitY=0.510638;exitPerimeter=0;entryX=0;entryY=0.510638;entryPerimeter=0;" edge="1" parent="1" source="62" target="66">
+          <mxGeometry relative="1" as="geometry">
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="47" value="OAuth del CRM" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#6850AD;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="474" y="784" width="141.12" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="48" style="edgeStyle=none;rounded=0;html=0;strokeColor=#AD6100;strokeWidth=2.5;endArrow=block;endFill=1;dashed=0;exitX=1;exitY=0.510638;exitPerimeter=0;entryX=0;entryY=0.510638;entryPerimeter=0;" edge="1" parent="1" source="66" target="70">
+          <mxGeometry relative="1" as="geometry">
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="49" value="authorize + token" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#AD6100;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1118" y="784" width="182.08" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="component-50" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="72.0" y="650.0" width="378.0" height="94.0" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-50">
+          <mxGeometry x="0.0" y="0.0" width="378" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#6850AD;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-50">
+          <mxGeometry x="0.0" y="16.0" width="4" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="Auth0 · cliente CIMD" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-50">
+          <mxGeometry x="20.0" y="20.0" width="344" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="Importación manual desde Dashboard" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-50">
+          <mxGeometry x="20.0" y="58.0" width="342" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="component-54" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="680.0" y="650.0" width="420.0" height="94.0" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-54">
+          <mxGeometry x="0.0" y="0.0" width="420" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="55" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#AD6100;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-54">
+          <mxGeometry x="0.0" y="16.0" width="4" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="56" value="URL pública HTTPS · MCP" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-54">
+          <mxGeometry x="20.0" y="20.0" width="386" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="57" value="MCP_PUBLIC_URL → túnel a localhost:3001" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-54">
+          <mxGeometry x="20.0" y="58.0" width="384" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="component-58" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1360.0" y="650.0" width="484.0" height="94.0" as="geometry" />
+        </mxCell>
+        <mxCell id="58" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-58">
+          <mxGeometry x="0.0" y="0.0" width="484" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="59" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#007C83;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-58">
+          <mxGeometry x="0.0" y="16.0" width="4" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="60" value="Nexus MCP server (:3001)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-58">
+          <mxGeometry x="20.0" y="20.0" width="450" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="/.well-known/client-metadata · PRM" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-58">
+          <mxGeometry x="20.0" y="58.0" width="448" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="component-62" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="72.0" y="773.0" width="378.0" height="94.0" as="geometry" />
+        </mxCell>
+        <mxCell id="62" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-62">
+          <mxGeometry x="0.0" y="0.0" width="378" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="63" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#6850AD;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-62">
+          <mxGeometry x="0.0" y="16.0" width="4" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="64" value="Auth0 · conexión CRM" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-62">
+          <mxGeometry x="20.0" y="20.0" width="344" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="65" value="Navegador: authorize · Auth0: token" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-62">
+          <mxGeometry x="20.0" y="58.0" width="342" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="component-66" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="680.0" y="773.0" width="420.0" height="94.0" as="geometry" />
+        </mxCell>
+        <mxCell id="66" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-66">
+          <mxGeometry x="0.0" y="0.0" width="420" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="67" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#AD6100;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-66">
+          <mxGeometry x="0.0" y="16.0" width="4" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="68" value="URL pública HTTPS · CRM" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-66">
+          <mxGeometry x="20.0" y="20.0" width="386" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="69" value="Conexión Auth0 → túnel a localhost:3002" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-66">
+          <mxGeometry x="20.0" y="58.0" width="384" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="component-70" value="" style="group;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1360.0" y="773.0" width="484.0" height="94.0" as="geometry" />
+        </mxCell>
+        <mxCell id="70" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#D4E0EA;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-70">
+          <mxGeometry x="0.0" y="0.0" width="484" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="71" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=0;fillColor=#007C83;strokeColor=none;strokeWidth=1.5;dashed=0;" vertex="1" parent="component-70">
+          <mxGeometry x="0.0" y="16.0" width="4" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="72" value="Nexus CRM (:3002)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="component-70">
+          <mxGeometry x="20.0" y="20.0" width="450" height="33.8" as="geometry" />
+        </mxCell>
+        <mxCell id="73" value="/crm/oauth/authorize · /crm/oauth/token" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=16;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="component-70">
+          <mxGeometry x="20.0" y="58.0" width="448" height="25.4" as="geometry" />
+        </mxCell>
+        <mxCell id="74" value="Si “Connect CRM” abre Codespaces, actualiza authorizationURL y tokenURL de la conexión en Auth0 para usar el túnel CRM." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=18;fontColor=#142B43;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="941" width="1378.88" height="28.2" as="geometry" />
+        </mxCell>
+        <mxCell id="75" value="El client_id CIMD debe coincidir con la URL pública importada. Los redirect_uris de la SPA se configuran por separado." style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=17;fontColor=#4B6178;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="976" width="1291.84" height="26.799999999999997" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

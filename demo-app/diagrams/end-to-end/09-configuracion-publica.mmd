@@ -1,0 +1,28 @@
+---
+title: "Nexus · configuración y exposición pública"
+---
+flowchart LR
+    subgraph provisioning ["Provisionamiento bajo demanda · al pulsar Provision Resources"]
+        frontend["Nexus frontend / Vite (:5173)"]
+        api["Nexus API server (:3000): POST /api/setup/provision"]
+        management["Auth0 Management API (HTTPS :443)"]
+        config["Resultados: .env + process.env, recarga de /api/config"]
+        frontend -->|"Botón Provision Resources"| api
+        api -->|"AUTH0_MGMT_* · Client Credentials, audience /api/v2/"| management
+        management -->|"APIs, apps, conexión, usuarios, rol y MFA"| api
+        api --> config
+    end
+    subgraph publicAccess ["URLs HTTPS públicas para servicios locales"]
+        auth0Cimd["Auth0 Dashboard: importación manual CIMD"]
+        mcpTunnel["MCP_PUBLIC_URL: túnel HTTPS a localhost:3001"]
+        mcp["Nexus MCP server (:3001): client-metadata y PRM"]
+        auth0Crm["Auth0: conexión CRM y redirección del navegador"]
+        crmTunnel["Túnel HTTPS a localhost:3002"]
+        crm["Nexus CRM (:3002): /crm/oauth/authorize y /crm/oauth/token"]
+        auth0Cimd -->|"Importar URL de metadata"| mcpTunnel
+        mcpTunnel -->|"GET /.well-known/client-metadata"| mcp
+        auth0Crm -->|"authorizationURL + tokenURL"| crmTunnel
+        crmTunnel --> crm
+    end
+    manual["Pasos manuales: cliente Management inicial, OBO, CIMD y habilitación Token Vault. FGA remoto opcional."]
+    manual -.-> api

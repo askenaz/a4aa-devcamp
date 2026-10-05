@@ -1,0 +1,24 @@
+---
+title: "Token Vault · ejecutar una herramienta CRM"
+---
+sequenceDiagram
+    autonumber
+    participant NexusApi as Nexus API server (:3000)
+    participant Auth0 as Auth0 (HTTPS :443)
+    participant NexusMcp as Nexus MCP server (:3001)
+    participant NexusCrm as Nexus CRM (:3002)
+    NexusApi->>Auth0: OBO con token A
+    Auth0-->>NexusApi: Token B para las herramientas
+    NexusApi->>NexusMcp: log_crm_activity, Bearer B y X-User-Token A
+    NexusMcp->>NexusMcp: Validar B y scope mcp:crm:log
+    NexusMcp->>Auth0: Exchange de Token Vault con A y nombre de conexión
+    alt No hay cuenta disponible o el exchange es denegado
+        Auth0-->>NexusMcp: Error
+        NexusMcp-->>NexusApi: Resultado denegado
+    else Credencial disponible
+        Auth0-->>NexusMcp: Token C del proveedor CRM
+        NexusMcp->>NexusCrm: POST /crm/activities con Bearer C
+        NexusCrm->>NexusCrm: Validar token de Nexus CRM (:3002)
+        NexusCrm-->>NexusMcp: Actividad creada
+        NexusMcp-->>NexusApi: Resultado de la herramienta
+    end

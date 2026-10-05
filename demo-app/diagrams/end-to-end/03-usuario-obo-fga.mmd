@@ -1,0 +1,43 @@
+---
+title: "Usuario · login, OBO y documentos"
+---
+sequenceDiagram
+    autonumber
+    participant User as Usuario
+    participant NexusFrontend as Nexus frontend / Vite (:5173)
+    participant Auth0 as Auth0 (HTTPS :443)
+    participant NexusApi as Nexus API server (:3000)
+    participant OpenAI as OpenAI API (HTTPS :443)
+    participant NexusMcp as Nexus MCP server (:3001)
+    participant Fga as FGA: server/fga/client.js (sin puerto propio)
+    User->>NexusFrontend: Iniciar sesión
+    NexusFrontend->>Auth0: /authorize con PKCE, OIDC y audiencia de login
+    Auth0->>User: Login y MFA según configuración
+    User-->>Auth0: Autenticación completada
+    Auth0-->>NexusFrontend: Código al redirect de la SPA
+    NexusFrontend->>Auth0: /oauth/token con código y code_verifier
+    Auth0-->>NexusFrontend: ID token y access token A
+    User->>NexusFrontend: Pedir un documento
+    NexusFrontend->>NexusApi: POST /api/chat con Bearer A
+    NexusApi->>NexusApi: Validar firma, issuer, audience y vigencia
+    NexusApi->>OpenAI: Mensaje e historial para seleccionar herramienta
+    OpenAI-->>NexusApi: get_document y documentId
+    NexusApi->>Auth0: Token exchange: subject_token A, cliente OBO, audiencia destino
+    Auth0->>Auth0: Aplicar permisos de usuario y grant del cliente
+    Auth0-->>NexusApi: Token B o error del intercambio
+    NexusApi->>NexusMcp: POST /mcp/tools/call con Bearer B
+    NexusMcp->>NexusMcp: Validar JWT y scope mcp:docs:read
+    alt Scope ausente
+        NexusMcp-->>NexusApi: HTTP 403 con scope requerido
+    else Scope presente
+        NexusMcp->>Fga: Check user:sub, can_read, document:id
+        Fga-->>NexusMcp: Allow o deny
+        alt FGA permite
+            NexusMcp-->>NexusApi: Contenido del documento
+        else FGA deniega
+            NexusMcp-->>NexusApi: Resultado success=false
+        end
+        NexusApi->>OpenAI: Resultado de la herramienta
+        OpenAI-->>NexusApi: Respuesta al usuario
+    end
+    NexusApi-->>NexusFrontend: Mensaje y resultado o error de autorización

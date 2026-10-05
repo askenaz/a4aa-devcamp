@@ -1,0 +1,50 @@
+@startuml
+!pragma layout smetana
+left to right direction
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontColor #142B43
+skinparam rectangleBackgroundColor #F1F6FA
+skinparam rectangleBorderColor #ACC1D3
+skinparam ArrowColor #2563A6
+title Nexus · arquitectura de ejecución
+
+rectangle "Usuario y dispositivos" {
+  rectangle "Nexus frontend / Vite\n:5173" as frontend
+  rectangle "Auth0 Guardian\nAprobación CIBA / MFA" as guardian
+}
+rectangle "Entorno local · un proceso Node: server/index.js" {
+  rectangle "Nexus API server\n:3000\nAgente, OBO, CIBA, provisionamiento" as api
+  rectangle "Nexus MCP server\n:3001\nValida JWT B + scope" as mcp
+  rectangle "Nexus CRM\n:3002\nMock OAuth + API\nValida token C" as crm
+  rectangle "FGA local\nserver/fga/client.js\nChecks y tuplas" as fga
+  rectangle "Reglas FGA\nserver/fga/model.js" as model
+  rectangle "DOCUMENTS\nserver/fga/model.js\nMemoria" as documents
+  rectangle "Simulador del agente\nAlternativa a OpenAI" as simulator
+}
+rectangle "Servicios externos" {
+  rectangle "Auth0 · HTTPS :443\nOIDC, OBO, CIBA\nConnected Accounts, Token Vault" as auth0 #F5F1FC
+  rectangle "OpenAI API · HTTPS :443\no OPENAI_BASE_URL" as openai
+  rectangle "Okta FGA / OpenFGA\nStore remoto opcional" as remoteFga
+}
+frontend --> api : /api/chat · token A
+frontend --> auth0 : OIDC / PKCE\nConnected Accounts
+api --> auth0 : OBO: A → B / CIBA
+api --> mcp : /mcp/tools/call · B\n+ A para el Vault
+api --> openai : Mensajes y resultados\nsin tokens en el prompt
+api ..> simulator : Alternativa local
+mcp --> auth0 : Token Vault: A → C
+mcp --> crm : /crm/activities · C
+mcp --> fga : can_read / can_share
+model ..> fga : Relaciones y reglas
+mcp --> documents : Acceso autorizado
+fga ..> remoteFga : Con configuración completa
+auth0 <--> guardian : CIBA / MFA\nDecisión del usuario
+
+legend bottom
+  Puertos habituales. Vite corre en un proceso separado.
+  FGA, CIBA y Token Vault son módulos sin listener propio.
+  Provisionamiento y ngrok: ver 09-configuracion-publica.
+endlegend
+@enduml

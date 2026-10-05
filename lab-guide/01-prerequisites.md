@@ -133,15 +133,15 @@ Once the Codespace finishes building, open a terminal.
 > [!IMPORTANT]
 > ***Before*** starting the app, run the below commands.
 
-### Step 1: install dependencies and add your credentials to the newly created `.env`
+### Step 1: install dependencies and add your credentials to `.env`
 
 ```bash
 cd demo-app
 npm install
-touch .env
+cp .env.demo .env
 ```
 > [!IMPORTANT]
-> Make sure you put the .env file ***inside*** the demo-app folder.
+> Keep `.env` inside `demo-app/`. The committed `.env.demo` is only a template; `.env` stays local.
 
 > [!NOTE]
 > `npm install` prints a line like `X vulnerabilities (...)` when it finishes. That's expected in this environment and safe to ignore. Don't run `npm audit fix`.

@@ -1,0 +1,40 @@
+@startuml
+!pragma layout smetana
+left to right direction
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontColor #142B43
+skinparam rectangleBackgroundColor #F1F6FA
+skinparam rectangleBorderColor #ACC1D3
+skinparam ArrowColor #2563A6
+title Nexus · configuración y exposición pública
+
+rectangle "Provisionamiento bajo demanda · botón Provision Resources" {
+  rectangle "Nexus frontend / Vite\n:5173" as frontend
+  rectangle "Nexus API server\n:3000\nPOST /api/setup/provision" as api
+  rectangle "Auth0 Management API\nHTTPS :443" as management #F5F1FC
+  rectangle "Resultados → .env + process.env\nSPA recarga /api/config" as config
+  frontend --> api : Botón Provision Resources
+  api --> management : AUTH0_MGMT_*\nClient Credentials\naudience /api/v2/
+  management --> api : APIs, apps, conexión\nusuarios, rol y MFA
+  api --> config
+}
+rectangle "URLs HTTPS públicas para servicios locales" {
+  rectangle "Auth0 Dashboard\nImportación manual CIMD" as auth0Cimd #F5F1FC
+  rectangle "MCP_PUBLIC_URL\nTúnel HTTPS → localhost:3001" as mcpTunnel #FBF8F2
+  rectangle "Nexus MCP server (:3001)\nclient-metadata y PRM" as mcp
+  rectangle "Auth0: conexión CRM\ny redirección del navegador" as auth0Crm #F5F1FC
+  rectangle "Túnel HTTPS\n→ localhost:3002" as crmTunnel #FBF8F2
+  rectangle "Nexus CRM (:3002)\n/crm/oauth/authorize\n/crm/oauth/token" as crm
+  auth0Cimd --> mcpTunnel : Importar URL de metadata
+  mcpTunnel --> mcp : GET client-metadata
+  auth0Crm --> crmTunnel : authorizationURL\ntokenURL
+  crmTunnel --> crm
+}
+legend bottom
+  Manual: cliente Management inicial, cliente OBO, CIMD y habilitación Token Vault.
+  FGA remoto es opcional. Levantar el servidor no dispara el provisionamiento.
+  El túnel MCP (:3001) y el túnel CRM (:3002) cumplen funciones distintas.
+endlegend
+@enduml

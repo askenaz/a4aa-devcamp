@@ -1,0 +1,17 @@
+---
+title: "M2M de herramientas · PROPUESTA, NO IMPLEMENTADO"
+---
+sequenceDiagram
+    autonumber
+    participant Worker as Worker externo (por implementar, sin puerto fijo)
+    participant Auth0 as Auth0 (HTTPS :443)
+    participant NexusMcp as Nexus MCP server (:3001)
+    participant FgaServices as FGA para servicios (por implementar)
+    Worker->>Auth0: /oauth/token con client_credentials y audiencia destino
+    Auth0->>Auth0: Comprobar grant de tipo client y scopes
+    Auth0-->>Worker: Token con identidad del servicio
+    Worker->>NexusMcp: Operación con Bearer de servicio
+    NexusMcp->>NexusMcp: Validar JWT, audiencia, scopes y tipo de principal
+    NexusMcp->>FgaServices: Autorizar el servicio sobre el recurso
+    FgaServices-->>NexusMcp: Allow o deny
+    NexusMcp-->>Worker: Resultado

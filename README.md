@@ -1,8 +1,14 @@
 # Securing MCP Servers and AI Agents with Auth0: DevCamp (A4AA)
 
+Guía en español: [Nexus de extremo a extremo](demo-app/How-To-E2E.md), con conceptos, diagramas y explicación de los permisos del usuario y del agente.
+
+[![Arquitectura de Nexus: frontend, API, MCP, CRM, Auth0 y FGA](demo-app/diagrams/end-to-end/01-arquitectura.svg)](demo-app/diagrams/end-to-end/01-arquitectura.svg)
+
+[Diagramas y formatos editables](demo-app/diagrams/end-to-end/README.md) · [Draw.io](demo-app/diagrams/end-to-end/01-arquitectura.drawio) · [PNG](demo-app/diagrams/end-to-end/01-arquitectura.png) · [PDF](demo-app/diagrams/end-to-end/01-arquitectura.pdf)
+
 A hands-on workshop that takes a working enterprise document assistant (**Nexus**) and secures both its MCP server and the agents calling it. You'll wire up user authentication, Token Vault for CRM credentials, and the full **Auth for MCP** stack across five modules, delivered end-to-end with **Auth0 for AI Agents (A4AA)**. Fine-grained authorization (FGA) runs as a live demo against real Okta FGA.
 
-The chat UI ships pre-built. Every line of code you write is on the identity and authorization layer. Your Auth0 tenant is provisioned for you when you launch, so there is no dashboard setup to do by hand beyond the specific toggles each module calls out.
+The chat UI ships pre-built. Every line of code you write is on the identity and authorization layer. The app's **Provision Resources** button registers the Auth0 resources through **Nexus API server (:3000)**. The OBO client, CIMD import, and module-specific toggles remain manual.
 
 ## Why this lab exists
 
@@ -69,7 +75,7 @@ The lab is built to run in **GitHub Codespaces**: open the repository, start a C
 
 ```bash
 cd demo-app
-touch .env
+cp .env.demo .env
 # add AUTH0_DOMAIN, AUTH0_MGMT_CLIENT_ID, AUTH0_MGMT_CLIENT_SECRET
 npm install
 npm run dev

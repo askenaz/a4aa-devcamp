@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1040" viewBox="0 0 1920 1040" role="img" aria-labelledby="title desc">
+<title id="title">Configuración y exposición pública</title><desc id="desc">Registro automático desde :3000 · importación CIMD · URLs públicas para el CRM local</desc>
+<defs>
+<marker id="arrow142B43" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#142B43"/></marker>
+<marker id="arrow4B6178" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4B6178"/></marker>
+<marker id="arrow007C83" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007C83"/></marker>
+<marker id="arrow6850AD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6850AD"/></marker>
+<marker id="arrow2563A6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563A6"/></marker>
+<marker id="arrowAD6100" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#AD6100"/></marker>
+</defs>
+<rect x="0" y="0" width="1920" height="1040" rx="0" fill="#FFFFFF" stroke="none" stroke-width="1.5"/>
+<rect x="0" y="0" width="1920" height="145" rx="0" fill="#142B43" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#87D6D3"><tspan x="48" y="41.0">NEXUS  /  AUTH0 FOR AI AGENTS</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#FFFFFF"><tspan x="48" y="91.0">Configuración y exposición pública</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#D5E4F1"><tspan x="48" y="123.0">Registro automático desde :3000 · importación CIMD · URLs públicas para el CRM local</tspan></text>
+<rect x="48" y="180" width="1824" height="333" rx="12" fill="#F3F7FA" stroke="#D4E0EA" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#2563A6"><tspan x="72" y="218.0">01  /  PROVISIONAMIENTO BAJO DEMANDA</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#4B6178"><tspan x="72" y="254.0">Se inicia al pulsar “Provision Resources”. Levantar el servidor no registra los recursos por sí solo.</tspan></text>
+<path d="M 382 354 L 510 354" fill="none" stroke="#2563A6" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow2563A6)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="394" y="332.0">POST</tspan></text>
+<path d="M 890 354 L 1045 354" fill="none" stroke="#6850AD" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow6850AD)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#6850AD"><tspan x="905" y="331.0">M2M</tspan></text>
+<path d="M 800 286 L 800 270 L 1675 270 L 1675 286" fill="none" stroke="#2563A6" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow2563A6)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#2563A6"><tspan x="1510" y="255.0">Persiste resultados</tspan></text>
+<rect x="72" y="286" width="310" height="151" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="72" y="302" width="4" height="119" rx="2" fill="#2563A6" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="92" y="328.0">Nexus frontend</tspan></text>
+<rect x="92" y="340" width="75" height="28" rx="7" fill="#E8F5F4" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="102" y="358.0">:5173</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="92" y="396.0">Botón Provision Resources</tspan><tspan x="92" y="418.4">Proxy de Vite a /api</tspan></text>
+<rect x="510" y="286" width="380" height="151" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="510" y="302" width="4" height="119" rx="2" fill="#2563A6" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="530" y="328.0">Nexus API server</tspan></text>
+<rect x="530" y="340" width="75" height="28" rx="7" fill="#E8F5F4" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2563A6"><tspan x="540" y="358.0">:3000</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="530" y="396.0">POST /api/setup/provision</tspan><tspan x="530" y="418.4">runProvision() + AUTH0_MGMT_*</tspan></text>
+<rect x="1045" y="286" width="380" height="151" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="1045" y="302" width="4" height="119" rx="2" fill="#6850AD" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="1065" y="328.0">Auth0 Management API</tspan></text>
+<rect x="1065" y="340" width="75" height="28" rx="7" fill="#E8F5F4" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#6850AD"><tspan x="1075" y="358.0">:443</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="1065" y="396.0">Token M2M · audiencia /api/v2/</tspan><tspan x="1065" y="418.4">APIs, apps, CRM, usuarios, rol y MFA</tspan></text>
+<rect x="1510" y="286" width="335" height="151" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="1510" y="302" width="4" height="119" rx="2" fill="#2563A6" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="1530" y="328.0">Configuración local</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="1530" y="360.0">Resultados → .env / process.env</tspan><tspan x="1530" y="382.4">La SPA recarga /api/config</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#4B6178"><tspan x="72" y="484.0">Manual: cliente inicial de Management, cliente OBO, importación CIMD y habilitación de Token Vault. FGA remoto: opcional.</tspan></text>
+<rect x="48" y="544" width="1824" height="368" rx="12" fill="#FBF8F2" stroke="#E5DAC6" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#AD6100"><tspan x="72" y="582.0">02  /  HTTPS PÚBLICO HACIA LOS SERVICIOS LOCALES</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#4B6178"><tspan x="72" y="615.0">Auth0 debe alcanzar los endpoints públicos. El túnel hacia :3001 y el túnel hacia :3002 cumplen funciones distintas.</tspan></text>
+<path d="M 450 698 L 680 698" fill="none" stroke="#6850AD" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow6850AD)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#6850AD"><tspan x="474" y="677.0">Importar metadata</tspan></text>
+<path d="M 1100 698 L 1360 698" fill="none" stroke="#AD6100" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrowAD6100)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#AD6100"><tspan x="1123" y="677.0">GET client-metadata</tspan></text>
+<path d="M 450 821 L 680 821" fill="none" stroke="#6850AD" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrow6850AD)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#6850AD"><tspan x="474" y="800.0">OAuth del CRM</tspan></text>
+<path d="M 1100 821 L 1360 821" fill="none" stroke="#AD6100" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrowAD6100)"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#AD6100"><tspan x="1118" y="800.0">authorize + token</tspan></text>
+<rect x="72" y="650" width="378" height="94" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="72" y="666" width="4" height="62" rx="2" fill="#6850AD" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="92" y="692.0">Auth0 · cliente CIMD</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="92" y="724.0">Importación manual desde Dashboard</tspan></text>
+<rect x="680" y="650" width="420" height="94" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="680" y="666" width="4" height="62" rx="2" fill="#AD6100" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="700" y="692.0">URL pública HTTPS · MCP</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="700" y="724.0">MCP_PUBLIC_URL → túnel a localhost:3001</tspan></text>
+<rect x="1360" y="650" width="484" height="94" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="1360" y="666" width="4" height="62" rx="2" fill="#007C83" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="1380" y="692.0">Nexus MCP server (:3001)</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="1380" y="724.0">/.well-known/client-metadata · PRM</tspan></text>
+<rect x="72" y="773" width="378" height="94" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="72" y="789" width="4" height="62" rx="2" fill="#6850AD" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="92" y="815.0">Auth0 · conexión CRM</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="92" y="847.0">Navegador: authorize · Auth0: token</tspan></text>
+<rect x="680" y="773" width="420" height="94" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="680" y="789" width="4" height="62" rx="2" fill="#AD6100" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="700" y="815.0">URL pública HTTPS · CRM</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="700" y="847.0">Conexión Auth0 → túnel a localhost:3002</tspan></text>
+<rect x="1360" y="773" width="484" height="94" rx="12" fill="#FFFFFF" stroke="#D4E0EA" stroke-width="1.5"/>
+<rect x="1360" y="789" width="4" height="62" rx="2" fill="#007C83" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#142B43"><tspan x="1380" y="815.0">Nexus CRM (:3002)</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#4B6178"><tspan x="1380" y="847.0">/crm/oauth/authorize · /crm/oauth/token</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#142B43"><tspan x="72" y="959.0">Si “Connect CRM” abre Codespaces, actualiza authorizationURL y tokenURL de la conexión en Auth0 para usar el túnel CRM.</tspan></text>
+<text font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#4B6178"><tspan x="72" y="993.0">El client_id CIMD debe coincidir con la URL pública importada. Los redirect_uris de la SPA se configuran por separado.</tspan></text>
+</svg>
